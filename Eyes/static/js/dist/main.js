@@ -47,9 +47,9 @@ class GodEyesMenu {
             `
         );
         this.root.$godeyes.append(this.$menu);
-        this.$face = this.$menu.find('godeyes-menu-field-item-face');
-        this.$hand = this.$menu.find('godeyes-menu-field-item-hand');
-        this.$admin = this.$menu.find('godeyes-menu-field-item-admin');
+        this.$face = this.$menu.find('.godeyes-menu-field-item-face');
+        this.$hand = this.$menu.find('.godeyes-menu-field-item-hand');
+        this.$admin = this.$menu.find('.godeyes-menu-field-item-admin');
 
         this.start();
     }
