@@ -35,6 +35,7 @@ class GodEyesMenu {
     add_listening_events() {
         let outer = this;
         this.$face.click(function () {
+            console.log("face click");
             outer.hide();
             outer.root.face.show();
         });

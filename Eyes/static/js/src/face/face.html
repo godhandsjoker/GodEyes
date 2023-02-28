@@ -1,9 +1,4 @@
-class GodEyesFace {
-    constructor(root) {
-        this.root = root;
-        this.$face = $(
-            `
-                <div>
+<div>
 
     <body>
     <video id="video" width="640" height="480" autoplay></video>
@@ -34,7 +29,7 @@ class GodEyesFace {
             };
             stream.onended = noStream;
             aVideo.onloadedmetadata = function () {
-                // alert('Success!!!');
+                alert('Success!!!');
             };
         }
 
@@ -44,27 +39,6 @@ class GodEyesFace {
 
         document.getElementById("snap").addEventListener("click", function () {
             ctx.drawImage(aVideo, 0, 0, 640, 480); //将获取视频绘制在画布上
-            alert("login in");
         });
     </script>
 </div>
-            `
-        );
-        this.hide();
-        this.root.$godeyes.append(this.$face);
-
-        this.start();
-    }
-
-    start() {
-
-    }
-
-    show() {
-        this.$face.show();
-    }
-
-    hide() {
-        this.$face.hide();
-    }
-}
