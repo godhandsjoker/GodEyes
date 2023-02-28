@@ -1,6 +1,6 @@
 #! /bin/bash
 
-JS_PATH=/d/31244/Desktop/ProJect/GodEyes/Eyes/static/js/
+JS_PATH=/g/大创项目文件/GodEyes/Eyes/static/js/
 JS_PATH_DIST=${JS_PATH}dist/
 JS_PATH_SRC=${JS_PATH}src/
 
