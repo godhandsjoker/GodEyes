@@ -20,4 +20,5 @@ from Eyes.views.index import index
 urlpatterns = [
     path("", index, name="index"),
     path("menu/", include("Eyes.urls.menu.index")),
+    path("settings/", include("Eyes.urls.settings.index")),
 ]
