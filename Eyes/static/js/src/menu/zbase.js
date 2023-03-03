@@ -41,6 +41,8 @@ class GodEyesMenu {
         });
         this.$hand.click(function () {
             console.log("click hand");
+            outer.hide();
+            outer.root.hand.show();
         });
         this.$admin.click(function () {
             console.log("click admin");

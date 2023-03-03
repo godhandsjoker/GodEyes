@@ -11,3 +11,4 @@ def getinfo_web(request):
 def getinfo(request):
     platform = request.GET.get('platform')
     return getinfo_web(request)
+
