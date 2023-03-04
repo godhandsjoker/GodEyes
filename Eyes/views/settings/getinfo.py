@@ -45,44 +45,56 @@ def trainer():
     pass
 
 
-def check():
+# print(recogizer)
+# names = []
+# warningtime = 0
+
+def face_detect_demo(img):
     recogizer = cv2.face.LBPHFaceRecognizer_create()
-    recogizer.read('trainer/trainer.yml')
-    names = []
-    warningtime = 0
-
-    def face_detect_demo(img):
-        gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)  # 转换为灰度
-        face_detector = cv2.CascadeClassifier('./haarcascade_frontalface_alt2.xml')
-        face = face_detector.detectMultiScale(
-            gray, 1.1, 5, cv2.CASCADE_SCALE_IMAGE, (100, 100), (300, 300))
-        # face=face_detector.detectMultiScale(gray)
-        for x, y, w, h in face:
-            cv2.rectangle(img, (x, y), (x + w, y + h), color=(0, 0, 255), thickness=2)
-            cv2.circle(img, center=(x + w // 2, y + h // 2), radius=w //
-                                                                    2, color=(0, 255, 0), thickness=1)
-            # 人脸识别
-            ids, confidence = recogizer.predict(gray[y:y + h, x:x + w])
-            # print('标签id:',ids,'置信评分：', confidence)
-            if confidence > 80:
-                return False
-            else:
-                return True
-
-    WSI_MASK_PATH = './IMAGE/'  # 存放图片的文件夹路径
-    paths = glob.glob(os.path.join(WSI_MASK_PATH, '*.jpeg'))
-    paths.sort()
-    for i in paths:
-        print(i)
-        img = cv2.imread(i)
-        if face_detect_demo(img):
-            print("YES")
+    recogizer.read('./trainer/trainer.yml')
+    gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)  # 转换为灰度
+    face_detector = cv2.CascadeClassifier('./haarcascade_frontalface_alt2.xml')
+    face = face_detector.detectMultiScale(
+        gray, 1.1, 5, cv2.CASCADE_SCALE_IMAGE, (100, 100), (300, 300))
+    # face=face_detector.detectMultiScale(gray)
+    for x, y, w, h in face:
+        cv2.rectangle(img, (x, y), (x + w, y + h), color=(0, 0, 255), thickness=2)
+        cv2.circle(img, center=(x + w // 2, y + h // 2), radius=w //
+                                                                2, color=(0, 255, 0), thickness=1)
+        # 人脸识别
+        ids, confidence = recogizer.predict(gray[y:y + h, x:x + w])
+        # print('标签id:',ids,'置信评分：', confidence)
+        if confidence > 80:
+            return False
         else:
-            print("NO")
+            return True
+
+
+def check(filename):
+    FILEPATH = "./IMAGE/"
+    FILE = FILEPATH + filename
+    img = cv2.imread(FILE)
+    if face_detect_demo(img):
+        return True
+    return False
+
+
+# WSI_MASK_PATH = './IMAGE/'  # 存放图片的文件夹路径
+# paths = glob.glob(os.path.join(WSI_MASK_PATH, '*.jpeg'))
+# paths.sort()
+# for i in paths:
+#     img = cv2.imread(i)
+#     if face_detect_demo(img):
+#         print("YES")
+#     else:
+#         print("NO")
 
 
 def getinfo(request):
     platform = request.GET.get('IMG')
     filename = decode_image(platform)
-    check()
-    return getinfo_right(request)
+    check(filename)
+    if check(filename):
+        return getinfo_right(request)
+    else:
+        return getinfo_wrong(request)
