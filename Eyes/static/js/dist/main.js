@@ -211,26 +211,26 @@ class GodEyesMenu {
         this.$menu = $(
             `
             <div class="godeyes-menu">
-            <div class="godeyes-menu-field">
-                <div class="godeyes-menu-field-item godeyes-menu-field-item-face">
-                    人脸识别
-                </div>
-                <br>
-                <div class="godeyes-menu-field-item godeyes-menu-field-item-hand">
-                    指纹识别
-                </div>
-                <br>
-                <div class="godeyes-menu-field-item godeyes-menu-field-item-admin">
-                    管理员
+                <div class="godeyes-menu-field">
+                    <div class="godeyes-menu-field-item godeyes-menu-field-item-face">
+                        人脸识别
+                    </div>
+                    <br>
+                    <div class="godeyes-menu-field-item godeyes-menu-field-item-hand">
+                        指纹识别
+                    </div>
+                    <br>
+                    <!-- <div class="godeyes-menu-field-item godeyes-menu-field-item-admin">
+                        管理员
+                    </div> -->
                 </div>
             </div>
-        </div>
             `
         );
         this.root.$godeyes.append(this.$menu);
         this.$face = this.$menu.find('.godeyes-menu-field-item-face');
         this.$hand = this.$menu.find('.godeyes-menu-field-item-hand');
-        this.$admin = this.$menu.find('.godeyes-menu-field-item-admin');
+        // this.$admin = this.$menu.find('.godeyes-menu-field-item-admin');
 
         this.start();
     }
@@ -251,9 +251,9 @@ class GodEyesMenu {
             outer.hide();
             outer.root.hand.show();
         });
-        this.$admin.click(function () {
-            console.log("click admin");
-        });
+        // this.$admin.click(function () {
+        //     console.log("click admin");
+        // });
     }
 
     show() {
