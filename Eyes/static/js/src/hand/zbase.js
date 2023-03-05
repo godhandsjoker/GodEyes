@@ -8,11 +8,11 @@ class GodEyesHand {
                 nihao
             </head>
 
-            <body>
-                <p>请问候我</p>
-                展示代码：
+            <body style="text-align:center;">
+                <p>指纹识别</p>
+                端口返回信息：
                 
-                <a href="Webshell:">
+                <a href="Webshell:">·
                     <button id="finger">match</button>
                 </a>
                 <br></br>

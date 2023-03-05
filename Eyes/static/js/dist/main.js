@@ -3,11 +3,11 @@ class GodEyesFace {
         this.root = root;
         this.$face = $(
             `
-                <div>
+    <div style="text-align:center;">
     <video id="video" width="500" height="600" controls>
     </video>
     <canvas id="canvas" width="500" height="600"></canvas>
-    <div>
+    <div style="text-align:center;">
         <button id="capture">拍照</button>
         <button id="close">关闭摄像头</button>
     </div>
@@ -117,11 +117,11 @@ class GodEyesHand {
                 nihao
             </head>
 
-            <body>
-                <p>请问候我</p>
-                展示代码：
+            <body style="text-align:center;">
+                <p>指纹识别</p>
+                端口返回信息：
                 
-                <a href="Webshell:">
+                <a href="Webshell:">·
                     <button id="finger">match</button>
                 </a>
                 <br></br>

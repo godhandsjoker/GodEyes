@@ -3,11 +3,11 @@ class GodEyesFace {
         this.root = root;
         this.$face = $(
             `
-                <div>
+    <div style="text-align:center;">
     <video id="video" width="500" height="600" controls>
     </video>
     <canvas id="canvas" width="500" height="600"></canvas>
-    <div>
+    <div style="text-align:center;">
         <button id="capture">拍照</button>
         <button id="close">关闭摄像头</button>
     </div>
