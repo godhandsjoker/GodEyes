@@ -3,25 +3,21 @@ class GodEyesHand {
         this.root = root;
         this.$hand = $(
             `
-            <div1>
-            <head>
-                nihao
-            </head>
-
-            <body style="text-align:center;">
-                <p>指纹识别</p>
-                端口返回信息：
+            <div1 style="text-align:center;">
+            <div class="backgrondLogin">
+            <body>
+                <h2>指纹识别</h2>
+                <h3>端口返回信息：</h3>
                 
-                <a href="Webshell:">·
-                    <button id="finger">match</button>
+                <a href="Webshell:">
+                    <button id="finger" style="display:block;margin:0 auto">match</button>
                 </a>
-                <br></br>
+                <br>
                 <m href="">
-                    <button id="find">find</button>
+                    <button id="find" style="display:block;margin:0 auto">find</button>
                 </m>
-                
-                
             </body>
+            </div>
             <script src="https://cdn.bootcss.com/jquery/3.6.1/jquery.js" type="text/javascript" ></script>
 	        <script type="text/javascript">
             

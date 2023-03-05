@@ -3,11 +3,11 @@ class GodEyesFace {
         this.root = root;
         this.$face = $(
             `
-    <div style="text-align:center;">
+    <div class="backgrondLogin" style="text-align:center;">
     <video id="video" width="500" height="600" controls>
     </video>
     <canvas id="canvas" width="500" height="600"></canvas>
-    <div style="text-align:center;">
+    <div>
         <button id="capture">拍照</button>
         <button id="close">关闭摄像头</button>
     </div>
@@ -52,7 +52,7 @@ class GodEyesFace {
         }
 
         if (navigator.mediaDevices.getUserMedia || navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia) {
-            getUserMedia({ video: { width: 300, height: 400 } }, success, error);
+            getUserMedia({video: {width: 300, height: 400}}, success, error);
         } else {
             alert('不支持访问用户媒体');
         }
@@ -69,12 +69,11 @@ class GodEyesFace {
                     IMG: photoSrc,
                 },
                 success: function (resp) {
-                   console.log(resp);
-                   if (resp.result === "success") {
-                       alert("Login Success!");
-                   } else {
-                       alert("Wrong!");
-                   }
+                    if (resp.result === "success") {
+                        alert("Login Sucees!");
+                    } else {
+                        alert("Wrong");
+                    }
                 }
             });
         })

@@ -3,11 +3,11 @@ class GodEyesFace {
         this.root = root;
         this.$face = $(
             `
-    <div style="text-align:center;">
+    <div class="backgrondLogin" style="text-align:center;">
     <video id="video" width="500" height="600" controls>
     </video>
     <canvas id="canvas" width="500" height="600"></canvas>
-    <div style="text-align:center;">
+    <div>
         <button id="capture">拍照</button>
         <button id="close">关闭摄像头</button>
     </div>
@@ -52,7 +52,7 @@ class GodEyesFace {
         }
 
         if (navigator.mediaDevices.getUserMedia || navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia) {
-            getUserMedia({ video: { width: 300, height: 400 } }, success, error);
+            getUserMedia({video: {width: 300, height: 400}}, success, error);
         } else {
             alert('不支持访问用户媒体');
         }
@@ -69,12 +69,11 @@ class GodEyesFace {
                     IMG: photoSrc,
                 },
                 success: function (resp) {
-                   console.log(resp);
-                   if (resp.result === "success") {
-                       alert("Login Success!");
-                   } else {
-                       alert("Wrong!");
-                   }
+                    if (resp.result === "success") {
+                        alert("Login Sucees!");
+                    } else {
+                        alert("Wrong");
+                    }
                 }
             });
         })
@@ -112,25 +111,21 @@ class GodEyesHand {
         this.root = root;
         this.$hand = $(
             `
-            <div1>
-            <head>
-                nihao
-            </head>
-
-            <body style="text-align:center;">
-                <p>指纹识别</p>
-                端口返回信息：
+            <div1 style="text-align:center;">
+            <div class="backgrondLogin">
+            <body>
+                <h2>指纹识别</h2>
+                <h3>端口返回信息：</h3>
                 
-                <a href="Webshell:">·
-                    <button id="finger">match</button>
+                <a href="Webshell:">
+                    <button id="finger" style="display:block;margin:0 auto">match</button>
                 </a>
-                <br></br>
+                <br>
                 <m href="">
-                    <button id="find">find</button>
+                    <button id="find" style="display:block;margin:0 auto">find</button>
                 </m>
-                
-                
             </body>
+            </div>
             <script src="https://cdn.bootcss.com/jquery/3.6.1/jquery.js" type="text/javascript" ></script>
 	        <script type="text/javascript">
             
